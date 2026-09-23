@@ -20,13 +20,21 @@
             padding: 20px;
         }
 
-        .newspaper-container {
-            max-width: 1000px;
-            background-color: var(--paper-bg);
-            margin: 0 auto;
-            padding: 40px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            border: 1px solid #dcd6cd;
+       .newspaper-container {
+    max-width: 1000px;
+    width: 92%;
+    background-color: var(--paper-bg);
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border: 1px solid #dcd6cd;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .newspaper-container {
+        padding: 40px;
+    }
         }
 
         /* Masthead */
