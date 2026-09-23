@@ -97,9 +97,16 @@
 
         /* Layout Columns */
         .grid-2col {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .grid-2col {
+        grid-template-columns: 2fr 1fr;
+    }
+}
         }
 
         section {
