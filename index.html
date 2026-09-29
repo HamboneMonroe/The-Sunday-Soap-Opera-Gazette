@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sunday Soap Opera Gazette - Vol. II, Issue 3</title>
+    <title>The Sunday Soap Opera Gazette - Vol. 16, Issue 3</title>
     <style>
         :root {
             --primary-dark: #1a1a1a;
@@ -20,21 +20,13 @@
             padding: 20px;
         }
 
-       .newspaper-container {
-    max-width: 1000px;
-    width: 92%;
-    background-color: var(--paper-bg);
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    border: 1px solid #dcd6cd;
-    box-sizing: border-box;
-}
-
-@media (min-width: 768px) {
-    .newspaper-container {
-        padding: 40px;
-    }
+        .newspaper-container {
+            max-width: 1000px;
+            background-color: var(--paper-bg);
+            margin: 0 auto;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid #dcd6cd;
         }
 
         /* Masthead */
@@ -97,16 +89,9 @@
 
         /* Layout Columns */
         .grid-2col {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-}
-
-@media (min-width: 768px) {
-    .grid-2col {
-        grid-template-columns: 2fr 1fr;
-    }
-}
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
         }
 
         section {
@@ -150,6 +135,29 @@
         li {
             margin-bottom: 4px;
             line-height: 1.4;
+        }
+        
+        /* Custom Grade Badges */
+        .grade-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border: 1px solid var(--border-color);
+            font-weight: bold;
+            font-size: 0.8rem;
+            background-color: #e0d9cc;
+            margin-right: 8px;
+        }
+
+        .grade-victim {
+            background-color: #fca5a5;
+            color: #7f1d1d;
+            border-color: #7f1d1d;
+        }
+
+        .grade-predator {
+            background-color: #d8b4fe;
+            color: #581c87;
+            border-color: #581c87;
         }
 
         /* Photo Frame */
@@ -217,6 +225,16 @@
             text-transform: uppercase;
         }
 
+        .prediction-record {
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.95rem;
+            background: #e0d9cc;
+            padding: 8px;
+            border: 1px solid #999;
+            margin-bottom: 15px;
+        }
+
         .footer {
             text-align: center;
             font-size: 0.8rem;
@@ -231,189 +249,392 @@
 
 <div class="newspaper-container">
     
-    <!-- Masthead -->
-    <div class="masthead">
-        <h1 class="newspaper-title">The Sunday Soap Opera Gazette</h1>
-        <div class="tagline">"All the drama, stats, and heartbreak that fit to print."</div>
+    <!-- ARCHIVE SELECTOR BAR -->
+    <div style="border-bottom: 2px solid var(--border-color); padding-bottom: 12px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <span style="font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; color: #444;">Gazette Archives:</span>
+        <div style="display: flex; gap: 8px;">
+            <button onclick="switchIssue('issue-vol16-3')" id="btn-vol16-3" class="issue-btn" style="padding: 4px 10px; background: #222; color: #f4ecd8; border: 1px solid #222; font-family: Georgia, serif; font-size: 0.8rem; cursor: pointer; font-weight: bold;">Vol. 16, Issue 3 (Current)</button>
+            <button onclick="switchIssue('issue-vol16-2')" id="btn-vol16-2" class="issue-btn" style="padding: 4px 10px; background: transparent; color: #444; border: 1px solid #888; font-family: Georgia, serif; font-size: 0.8rem; cursor: pointer;">Vol. 16, Issue 2</button>
+        </div>
     </div>
 
-    <div class="edition-bar">
-        <span>Vol. II — Issue 3</span>
-        <span>Week 2 Recap & Week 3 Previews</span>
-        <span>September 2026</span>
-    </div>
-
-    <!-- Main Headline & Byline -->
-    <h1 class="lead-headline">Purdy and Prescott Spark White Bronco Blowout; Whopper Wentzday Hangs 191 on Autobots</h1>
-    <span class="byline">By Barry Lee Competent | League Beat Writer</span>
-
-    <p>Two weeks into the season, early divisional standings are beginning to take shape across The Sunday Soap Opera. With the bottom two franchises in each six-team division set to be excluded from the postseason and relegated to the Toilet Bowl Tournament—where the consolation prize is the #1 overall pick in next spring's draft—the early pressure on underperforming rosters is mounting.</p>
-    <p>Here is the breakdown of Week 2 action across the league, followed by the Week 3 matchup previews.</p>
-
-    <!-- Main Content Grid -->
-    <div class="grid-2col" style="margin-top: 25px;">
+    <!-- ISSUE VOLUME 16, ISSUE 3 (CURRENT) -->
+    <div id="issue-vol16-3" class="gazette-issue active-issue">
         
-        <!-- Left Column: Recaps & Previews -->
-        <div>
-            <section>
-                <h2>Week 2 Game Recaps</h2>
-                
-                <h3>White Bronco 170.00, Danger Cats 131.10</h3>
-                <p>In the marquee matchup of the week, White Bronco capitalized on its 10-pick stash in the top five draft rounds to secure a 38.90-point victory over Danger Cats.</p>
-                <ul>
-                    <li><strong>White Bronco Key Performers:</strong> Brock Purdy (QB): 35.35 pts | Dak Prescott (QWRT): 38.55 pts | DeVonta Smith (WR): 18.70 pts</li>
-                    <li><strong>Danger Cats Key Performers:</strong> Jahmyr Gibbs (RB): 17.30 pts | Stefon Diggs (WR): 16.70 pts | Justin Herbert (QB): 7.80 pts</li>
-                </ul>
-                
-                <!-- WEEK 2 MATCHUP PHOTO DISPLAY FOR EVERYONE -->
-                <div class="matchup-photo-frame">
-                    <img src="matchup-week2.png" alt="White Bronco vs Danger Cats Matchup Graphic">
-                    <div class="photo-caption">WEEK 2 MARQUEE MATCHUP: White Bronco outduels Danger Cats in a high-scoring thriller.</div>
+        <!-- Masthead -->
+        <div class="masthead">
+            <h1 class="newspaper-title">The Sunday Soap Opera Gazette</h1>
+            <div class="tagline">"All the drama, stats, bribery rumors, and heartbreak that fit to print."</div>
+        </div>
+
+        <div class="edition-bar">
+            <span>Vol. 16 — Issue 3</span>
+            <span>Week 3 Recap & Week 4 Previews</span>
+            <span>September 2026</span>
+        </div>
+
+        <!-- Main Headline & Byline -->
+        <h1 class="lead-headline">Whopper Wentzday Hangs 187, Then Gets Robbed Blind By Autobots in Achane Cartel Heist</h1>
+        <span class="byline">By Barry Lee Competent | League Beat Writer & Chief Conspiracy Theorist</span>
+
+        <p>Three weeks into the season, the divisional hierarchy in The Sunday Soap Opera is rapidly dividing the contender elite from the absolute clown shoes. While Whopper Wentzday dropped a nuclear 187.30 points to stay undefeated atop the West, the real bloodbath occurred on the trade block. A chaotic weekend of blockbusters saw draft picks fly in every direction, culminating in a tragic injury disaster and bribery rumors so severe that federal authorities might need to step in and investigate the Autobots front office.</p>
+        <p>Here is the full, unhinged investigative report on Week 3 action across the league, followed by the Week 4 matchup previews where we will absolutely jinx someone.</p>
+
+        <!-- Main Content Grid -->
+        <div class="grid-2col" style="margin-top: 25px;">
+            
+            <!-- Left Column: Recaps, Trades & Previews -->
+            <div>
+                <section>
+                    <h2>Week 3 Game Recaps</h2>
+                    
+                    <h3>White Bronco 164.55, Josh Almighty 149.30</h3>
+                    <p>In the marquee heavyweight tilt of the week, White Bronco made a massive championship statement, out-gunning division rival Josh Almighty in a 164.55 to 149.30 shootout.</p>
+                    <ul>
+                        <li><strong>White Bronco Key Performers:</strong> Brock Purdy (QB): 43.25 pts | Dak Prescott (QWRT): 20.70 pts | Drake London (WR): 20.40 pts</li>
+                        <li><strong>Josh Almighty Key Performers:</strong> Trevor Lawrence (QWRT): 25.60 pts | Josh Allen (QB): 24.05 pts | Jonathan Taylor (RB): 15.41 pts</li>
+                    </ul>
+                    
+                    <!-- WEEK 3 MATCHUP PHOTO DISPLAY -->
+                    <div class="matchup-photo-frame">
+                        <img src="matchup-week3-wb-ja.jpg" alt="White Bronco vs Josh Almighty Matchup Graphic">
+                        <div class="photo-caption">MARQUEE MATCHUP: Brock Purdy turns into prime Joe Montana, carrying White Bronco past Josh Almighty to a pristine 3-0 start. Will White Bronco inevitably blow this late in the season? Tradition says yes.</div>
+                    </div>
+
+                    <p>Brock Purdy put together an absolutely disgusting 43.25-point performance, shredding Josh Almighty's secondary and outdueling Josh Allen and Trevor Lawrence. Josh Almighty threw everything they had at the scoreboard, but White Bronco's lethal combination proved insurmountable. With the victory, White Bronco moves to 3-0 atop The Steeltown Junkies East, proving that their hot start is no fluke while handing Josh Almighty their first taste of defeat.</p>
+
+                    <h3>Whopper Wentzday 187.30, The Pain Train 124.70</h3>
+                    <p>Whopper Wentzday posted an absolute masterclass, hanging a week-high 187.30 points to obliterate The Pain Train in a 62.60-point bloodbath.</p>
+                    <ul>
+                        <li><strong>Whopper Wentzday Key Performers:</strong> Sam Darnold (QWRT): 37.45 pts | Bijan Robinson (RB): 33.30 pts | Jaxon Smith-Njigba (WR): 25.50 pts</li>
+                        <li><strong>The Pain Train Key Performers:</strong> Patrick Mahomes (QWRT): 21.40 pts | Markus Golden (WR): 16.00 pts | Kyler Murray (QB): 11.10 pts</li>
+                    </ul>
+                    <p>Yes, you read that right. Sam Darnold—the guy who was seeing ghosts in New York—dropped 37.45 points to lead a fantasy team in the year of our Lord 2026. Supported by Bijan Robinson's casual 33.30-point effort, standing in front of Whopper's juggernaut felt like jumping in front of an actual locomotive. Whopper Wentzday remains undefeated at 3-0 with a league-pacing 514.15 total points forced, cementing their status as the apex predator of the Whopper Wentzday West.</p>
+
+                    <h3>RUN CMC 158.15, Kyler Duty 88.55</h3>
+                    <p>RUN CMC dominated Kyler Duty in a 69.60-point rout, cruising to a comfortable 2-1 record.</p>
+                    <ul>
+                        <li><strong>RUN CMC Key Performers:</strong> Geno Smith (QB): 27.25 pts | Lamar Jackson (QWRT): 26.30 pts | James Cook III (RB): 18.40 pts</li>
+                        <li><strong>Kyler Duty Key Performers:</strong> Matthew Stafford (QB): 23.80 pts | Cam Skattebo (RB): 10.00 pts | Baker Mayfield (QWRT): 0.00 pts</li>
+                    </ul>
+                    <p>Geno Smith and Lamar Jackson combined for 53.55 points to spearhead RUN CMC's balanced attack. Meanwhile, Kyler Duty's week was doomed from the start after leaving an inactive Baker Mayfield in the QWRT slot for a grand total of 0.00 points. Classic Kyler Duty move. It's a miracle they remembered their password this week. Kyler Duty drops to 1-2.</p>
+
+                    <h3>Marr Burrow Smokes 136.25, Autobots 113.85</h3>
+                    <p>Marr Burrow Smokes got back in the win column with a 22.40-point victory over the spectacularly incompetent Autobots.</p>
+                    <ul>
+                        <li><strong>Marr Burrow Smokes Key Performers:</strong> Joe Burrow (QWRT): 29.40 pts | Texans Defense (DEF): 18.00 pts | Terry McLaurin (WR): 13.70 pts</li>
+                        <li><strong>Autobots Key Performers:</strong> Marcus Mariota (QB): 26.25 pts | Bo Nix (QWRT): 24.00 pts | Aaron Rodgers (BN): 28.60 pts</li>
+                    </ul>
+                    <p>Joe Burrow bounced back in style with 29.40 points to push Marr Burrow Smokes to 2-1. On the other sideline, Autobots dropped to 0-3 in painful, hilarious fashion—watching Aaron Rodgers drop 28.60 points on their bench while starting Marcus Mariota and Bo Nix. Handing the wheel to the autodraft algorithm continues to produce pure comedy for rival managers as Autobots sits buried in the cellar.</p>
+
+                    <h3>Danger Cats 129.15, Steeltown Junkies 102.25</h3>
+                    <p>Danger Cats used an explosive running game to handle defending champion Steeltown Junkies.</p>
+                    <ul>
+                        <li><strong>Danger Cats Key Performers:</strong> Jahmyr Gibbs (RB): 34.40 pts | Christian Watson (WR): 15.60 pts | Tee Higgins (WR): 15.00 pts</li>
+                        <li><strong>Steeltown Junkies Key Performers:</strong> Kirk Cousins (QWRT): 27.70 pts | George Kittle (TE): 20.20 pts | Drake Maye (QB): 0.75 pts</li>
+                    </ul>
+                    <p>Jahmyr Gibbs put Danger Cats on his back with an electric 34.40-point performance. Steeltown Junkies received strong efforts from Kirk Cousins and George Kittle, but a disastrous 0.75-point outing from starting QB Drake Maye sank their hopes. The championship hangover is terminal, folks. Steeltown Junkies drops below the postseason cutoff line at 1-2, leaving fans wondering if they're just going to punt the season entirely.</p>
+
+                    <h3>Clench Tuxedos 124.35, Three Dots an a Dash 101.75</h3>
+                    <p>Clench Tuxedos finally stopped embarrassing themselves, earning their first victory of the season by holding off winless Three Dots an a Dash.</p>
+                    <ul>
+                        <li><strong>Clench Tuxedos Key Performers:</strong> Tyler Shough (QWRT): 29.35 pts | Jordan Love (QB): 23.60 pts | Kenneth Walker III (RB): 19.30 pts</li>
+                        <li><strong>Three Dots Key Performers:</strong> Broncos Defense (DEF): 20.00 pts | Hunter Fannin Jr. (TE): 17.10 pts | Daniel Jones (QB): 5.25 pts</li>
+                    </ul>
+                    <p>Co-managers Dan & Nate finally got Clench Tuxedos moving in the right direction behind 29.35 points from Tyler Shough. Three Dots an a Dash suffered from a 5.25-point collapse at starting QB from Daniel Jones and dropped to 0-3 at the bottom of The Steeltown Junkies East. Time to pay up on that case of beer, fellas.</p>
+                </section>
+
+                <!-- SPECIAL INVESTIGATIVE REPORT -->
+                <section>
+                    <h2>Special Investigative Report: Week 3 Trade Blockbusters & Bribery Scandals</h2>
+
+                    <h3>Trade 1: CeeDee Lamb Blockbuster</h3>
+                    <p><strong>White Bronco Receives:</strong> CeeDee Lamb (WR), 12th, 14th, 16th Rd Picks<br>
+                    <strong>Autobots Receives:</strong> Alec Pierce (WR), 1st, 2nd, 7th Rd Picks (White Bronco)</p>
+                    <p><span class="grade-badge">White Bronco: A-</span> <span class="grade-badge">Autobots: B+</span></p>
+                    <p>White Bronco made it crystal clear they are playing for the championship ring right now. Adding an elite, game-breaking talent in CeeDee Lamb gives them unstoppable receiving production. Sure, giving up next year's 1st and 2nd round picks hurts, but flags fly forever. Meanwhile, Autobots continues their full rebuild, hoarding draft equity like a doomsday prepper waiting for the apocalypse.</p>
+
+                    <h3>Trade 2: The Achane Tragedy & The Fleecing of Whopper Wentzday</h3>
+                    <p><strong>Whopper Wentzday Receives:</strong> De'Von Achane (RB), Josh Downs (WR), 13th & 15th Rd Picks<br>
+                    <strong>Autobots Receives:</strong> Rashid Shaheed (WR), Chuba Hubbard (RB), 3rd & 4th Rd Picks</p>
+                    <p><span class="grade-badge grade-victim">Whopper Wentzday: V (Victim)</span> <span class="grade-badge grade-predator">Autobots: P (Predator)</span></p>
+                    <p>When the transaction processed on Saturday, Whopper Wentzday executed a classic win-now move, surrendering starting depth and valuable 3rd and 4th round draft picks to acquire a marquee backfield weapon in De'Von Achane. However, disaster struck less than 24 hours later. During Miami’s matchup against Kansas City, Achane exited in the first quarter with a complete ACL tear. MRI scans confirmed a 9 to 12 month recovery timeline, placing Whopper's headline acquisition on Season-Ending IR before ever starting a single game for his new franchise.</p>
+                    <p>The timing is far too surgical. Unsubstantiated whispers have surfaced claiming Kansas City safety <strong>Alohi Gilman</strong> received a gracious "financial tip" courtesy of Autobots management right before delivering that low tackle—a rumor Autobots leadership vehemently denies. When approached by <em>The Gazette</em> regarding the allegations, Autobots maintained that <em>"it was just bad luck,"</em> before shutting down further questions with a defensive <strong>"NO COMMENT!"</strong> On the other end, a visibly shell-shocked Whopper Wentzday offered a succinct, weeping summary: <em>"Can't believe that. Fuck."</em></p>
+
+                    <h3>Trade 3: Amon-Ra St. Brown Blockbuster</h3>
+                    <p><strong>Clench Tuxedos Receives:</strong> Amon-Ra St. Brown (WR), 10th, 15th, 16th Rd Picks<br>
+                    <strong>Steeltown Junkies Receives:</strong> George Kittle (TE), 1st, 2nd, 8th Rd Picks</p>
+                    <p><span class="grade-badge">Clench Tuxedos: B+</span> <span class="grade-badge">Steeltown Junkies: A-</span></p>
+                    <p>Clench Tuxedos gave up the absolute farm to bring in "Sun God" Amon-Ra St. Brown, instantly bolstering their starting lineup to try and save their season. Steeltown Junkies capitalized on their title leverage, acquiring George Kittle at tight end while re-stocking their completely depleted top-five draft round inventory for next spring.</p>
+
+                    <h3>Trade 4: Metcalf & Pittman Blockbuster</h3>
+                    <p><strong>Marr Burrow Smokes Receives:</strong> Parker Washington (WR), Zay Flowers (WR), 10th & 11th Rd Picks<br>
+                    <strong>Three Dots an a Dash Receives:</strong> DK Metcalf (WR), Michael Pittman Jr. (WR), 1st & 5th Rd Picks</p>
+                    <p><span class="grade-badge">Marr Burrow Smokes: B</span> <span class="grade-badge">Three Dots an a Dash: A</span></p>
+                    <p>Three Dots an a Dash pulled off an absolute fleece job to try and rescue their miserable 0-3 season, grabbing two starting WRs in DK Metcalf and Michael Pittman Jr. alongside a 1st round pick. Marr Burrow Smokes depth-charges their roster with Zay Flowers while presumably taking crazy pills.</p>
+                </section>
+
+                <!-- WEEK 4 PREVIEWS -->
+                <section>
+                    <h2>Week 4 Matchup Previews & Gazette Picks</h2>
+
+                    <div class="prediction-record">
+                        🎯 Gazette Odds Tracking Record: 0 - 0 (We can't be worse than Yahoo projections)
+                    </div>
+
+                    <h3>RUN CMC (2-1) vs. Autobots (0-3)</h3>
+                    <p><em>Projection: RUN CMC 122.85, Autobots 116.46</em><br>
+                    <strong>Gazette Pick: RUN CMC 🔮</strong><br>
+                    Lamar Jackson (23.08 proj) and Geno Smith give RUN CMC a massive edge at quarterback. Winless Autobots are dead meat. Unless they pay off another defender, they'll drop to 0-4.</p>
+
+                    <h3>Kyler Duty (1-2) vs. The Pain Train (1-2)</h3>
+                    <p><em>Projection: The Pain Train 128.86, Kyler Duty 101.37</em><br>
+                    <strong>Gazette Pick: The Pain Train 🔮</strong><br>
+                    With Baker Mayfield projected at 0.00 points for Kyler Duty because setting a lineup is apparently too hard, Pain Train behind Kyler Murray and Patrick Mahomes will cruise to victory.</p>
+
+                    <h3>Marr Burrow Smokes (2-1) vs. Whopper Wentzday (3-0)</h3>
+                    <p><em>Projection: Whopper Wentzday 136.47, Marr Burrow Smokes 129.46</em><br>
+                    <strong>Gazette Pick: Marr Burrow Smokes (UPSET SPECIAL) 🔮</strong><br>
+                    Whopper Wentzday is mourning the Achane disaster and Mike Evans is hobbled. Joe Burrow pulls off the upset for Marr Burrow Smokes while Whopper cries in the corner.</p>
+
+                    <h3>Josh Almighty (2-1) vs. Steeltown Junkies (1-2)</h3>
+                    <p><em>Projection: Josh Almighty 141.95, Steeltown Junkies 106.26</em><br>
+                    <strong>Gazette Pick: Josh Almighty 🔮</strong><br>
+                    Josh Allen (24.05 proj) and Trevor Lawrence lead an overwhelming offense that the defending champ Steeltown Junkies simply cannot match this week.</p>
+
+                    <h3>Danger Cats (2-1) vs. Three Dots an a Dash (0-3)</h3>
+                    <p><em>Projection: Danger Cats 126.95, Three Dots an a Dash 113.17</em><br>
+                    <strong>Gazette Pick: Danger Cats 🔮</strong><br>
+                    Jahmyr Gibbs and Jalen Hurts keep Danger Cats rolling while Three Dots navigates their new trade additions and tries to remember how to win a football game.</p>
+
+                    <h3>White Bronco (3-0) vs. Clench Tuxedos (1-2)</h3>
+                    <p><em>Projection: White Bronco 131.88, Clench Tuxedos 124.25</em><br>
+                    <strong>Gazette Pick: White Bronco 🔮</strong><br>
+                    In the matchup of the week, Brock Purdy and newly acquired CeeDee Lamb narrowly outpower Amon-Ra St. Brown to keep Bronco undefeated at 4-0.</p>
+                </section>
+            </div>
+
+            <!-- Right Column: Standings -->
+            <div>
+                <div class="standings-box">
+                    <h3>The Steeltown Junkies East</h3>
+                    <ul class="standings-list">
+                        <li><span>White Bronco</span> <strong>3-0-0 (467.15 PF)</strong></li>
+                        <li><span>Josh Almighty</span> <strong>2-1-0 (536.00 PF)</strong></li>
+                        <li><span>Danger Cats</span> <strong>2-1-0 (423.75 PF)</strong></li>
+                        <li><span>Clench Tuxedos</span> <strong>1-2-0 (391.05 PF)</strong></li>
+                    </ul>
+                    <div class="cutoff">--- Toilet Bowl Bound ---</div>
+                    <ul class="standings-list">
+                        <li><span>Three Dots an a Dash</span> <strong>0-3-0 (374.85 PF)</strong></li>
+                        <li><span>Steeltown Junkies</span> <strong>1-2-0 (328.40 PF)</strong></li>
+                    </ul>
                 </div>
 
-                <p>The combined 73.90 points from Purdy and Prescott proved overwhelming for Danger Cats. Danger Cats dropped to 1-1 after starting Justin Herbert over a bench that included Deshaun Watson (25.10 points). White Bronco moves to 2-0 with 302.60 total points forced. For a franchise with a long, painful history of failing to even make the playoffs, sitting near the top of The Steeltown Junkies East feels like uncharted territory—leaving the rest of the league waiting to see if this is a genuine breakthrough or just setting up an even more hilarious late-season collapse.</p>
-
-                <h3>Whopper Wentzday 191.30, Autobots 109.95</h3>
-                <p>Whopper Wentzday posted the highest single-week team score of the season, dominating Autobots in an 81.35-point landslide.</p>
-                <ul>
-                    <li><strong>Whopper Wentzday Key Performers:</strong> Jared Goff (QB): 37.05 pts | Jaxon Smith-Njigba (WR): 34.50 pts | Drew Lock (QWRT): 29.75 pts | Brandon Aubrey (K): 18.00 pts</li>
-                    <li><strong>Autobots Key Performers:</strong> CeeDee Lamb (WR): 27.30 pts | Ja'Marr Chase (WR): 19.50 pts | Aaron Rodgers (QB): 0.85 pts</li>
-                </ul>
-                <p>Whopper Wentzday's explosive dual-QB output and nearly 20 points from kicker Brandon Aubrey left Autobots completely behind. Autobots dropped to 0-2 following a zero-touchdown week for several starters, highlighted by Aaron Rodgers finishing with 0.85 points. Missing draft night and handing the wheel to the autodraft algorithm rarely yields gold, and an 81-point thrashing was pure comedy for arch-rival Josh Almighty, who takes immense pleasure in watching Autobots get dismantled. Autobots now sits in the cellar of the Whopper Wentzday West at 0-2.</p>
-
-                <h3>Josh Almighty 164.65, Clench Tuxedos 124.15</h3>
-                <p>Josh Almighty maintained its spot atop The Steeltown Junkies East with a decisive victory over Clench Tuxedos.</p>
-                <ul>
-                    <li><strong>Josh Almighty Key Performers:</strong> Josh Allen (QB): 48.30 pts | Davante Adams (WR): 32.50 pts | Jonathan Taylor (RB): 25.20 pts</li>
-                    <li><strong>Clench Tuxedos Key Performers:</strong> Patriots Defense (DEF): 27.00 pts | Tyler Shough (QWRT): 23.90 pts | Quentin Johnston (WR): 1.40 pts</li>
-                </ul>
-                <p>Josh Allen led all scorers across the league with 48.30 points, supported by heavy outputs from Davante Adams and Jonathan Taylor. Through two weeks, Josh Almighty paces the league with 386.70 points forced. Clench Tuxedos falls to 0-2 in year two of the current co-management regime, leaving the team struggling inside The Steeltown Junkies East Toilet Bowl line despite holding extra early draft capital entering the season.</p>
-
-                <h3>Rivalry Matchup: Steeltown Junkies 127.35, Three Dots an a Dash 100.60</h3>
-                <p>In one of the league's most heated traditional rivalries, defending champion Steeltown Junkies claimed bragging rights over Three Dots an a Dash in a 26.75-point Steeltown Junkies East battle.</p>
-                <ul>
-                    <li><strong>Steeltown Junkies Key Performers:</strong> Kirk Cousins (QWRT): 26.75 pts | Amon-Ra St. Brown (WR): 26.20 pts | Tre Tucker (WR): 18.90 pts</li>
-                    <li><strong>Three Dots an a Dash Key Performers:</strong> Jayden Daniels (QWRT): 17.70 pts | Broncos Defense (DEF): 11.00 pts | Jaxson Dart (QB): 1.00 pt</li>
-                </ul>
-                <p>These two franchises regularly play for a side-bet case of beer—a wager that Three Dots an a Dash now owes, though Steeltown Junkies’ notorious history of conveniently failing to deliver after losing means Three Dots an a Dash might take its time handing it over. Having traded away its entire inventory of picks in rounds 1 through 5, Steeltown Junkies ran out a paper-thin lineup that held together just long enough behind Kirk Cousins and Amon-Ra St. Brown. Three Dots an a Dash suffered from a 1.00-point performance at starting QB from Jaxson Dart and dropped to 0-2.</p>
-
-                <h3>RUN CMC 139.10, The Pain Train 109.45</h3>
-                <p>RUN CMC improved to 1-1 by pulling away from The Pain Train in a 29.65-point Whopper Wentzday West contest.</p>
-                <ul>
-                    <li><strong>RUN CMC Key Performers:</strong> Devin Lloyd (D): 27.90 pts | Harrison Butker (K): 20.50 pts | James Cook III (RB): 19.90 pts</li>
-                    <li><strong>The Pain Train Key Performers:</strong> Patrick Mahomes (QWRT): 36.80 pts | Jake Ferguson (TE): 16.30 pts | Carson Wentz (QB): 4.75 pts</li>
-                </ul>
-                <p>Operating with its signature low-activity management style, RUN CMC produced a balanced lineup backed by defensive linebacker Devin Lloyd's 27.90 points and kicker Harrison Butker's 20.50 points. The Pain Train dropped to 1-1 despite a 36.80-point effort from Patrick Mahomes, as starting QB Carson Wentz managed just 4.75 points.</p>
-
-                <h3>Kyler Duty 93.35, Marr Burrow Smokes 67.55</h3>
-                <p>Kyler Duty secured a defensive victory over Marr Burrow Smokes, holding the opposing offense under 70 total points.</p>
-                <ul>
-                    <li><strong>Kyler Duty Key Performers:</strong> Matthew Stafford (QB): 36.25 pts | Travis Kelce (TE): 16.10 pts | Baker Mayfield (QWRT): 12.00 pts</li>
-                    <li><strong>Marr Burrow Smokes Key Performers:</strong> Joe Burrow (QWRT): 17.25 pts | Texans Defense (DEF): 11.00 pts | Caleb Williams (QB): 5.10 pts</li>
-                </ul>
-                <p>Known across the league for struggling to set a complete lineup for 17 consecutive weeks, Kyler Duty submitted a full roster and caught Marr Burrow Smokes on an ideal night. Marr Burrow Smokes laid a season-low 67.55 team points as starting quarterbacks Caleb Williams (5.10 points) and Joe Burrow (17.25 points) failed to generate momentum.</p>
-            </section>
-
-            <section>
-                <h2>Week 3 Matchup Previews</h2>
-
-                <h3>White Bronco (2-0) vs. Josh Almighty (2-0)</h3>
-                <p><em>Projection: Josh Almighty 142.31, White Bronco 138.26 (53% to 47% win probability)</em><br>
-                A battle of undefeated leaders in The Steeltown Junkies East features the league's top-scoring offense in Josh Almighty against the QB-heavy White Bronco.</p>
-                <ul>
-                    <li><strong>White Bronco Key Starters:</strong> Brock Purdy (22.96 proj.), Dak Prescott (22.71 proj.), Javonte Williams (11.92 proj.)</li>
-                    <li><strong>Josh Almighty Key Starters:</strong> Josh Allen (25.65 proj.), Trevor Lawrence (20.10 proj.), Derrick Henry (16.09 proj.)</li>
-                </ul>
-                <p>A win for White Bronco would serve as a massive statement against one of the league's most hated juggernauts.</p>
-
-                <h3>Marr Burrow Smokes (1-1) vs. Autobots (0-2)</h3>
-                <p><em>Projection: Autobots 121.49, Marr Burrow Smokes 121.30 (50% to 50% win probability)</em><br>
-                Both Whopper Wentzday West franchises enter Week 3 seeking roster stability.</p>
-                <ul>
-                    <li><strong>Marr Burrow Smokes Key Starters:</strong> Joe Burrow (20.50 proj.), Bryce Young (17.65 proj.), Saquon Barkley (12.37 proj.)</li>
-                    <li><strong>Autobots Key Starters:</strong> Bo Nix (19.00 proj.), Marcus Mariota (13.73 proj.), De'Von Achane (13.29 proj.)</li>
-                </ul>
-                <p>Marr Burrow Smokes relies on a bounce-back effort from Joe Burrow and Saquon Barkley following a 67-point Week 2. Autobots looks to secure its first victory behind De'Von Achane and CeeDee Lamb to avoid falling into an early 0-3 hole—and to stop Josh Almighty from laughing at them.</p>
-
-                <h3>Steeltown Junkies (1-1) vs. Danger Cats (1-1)</h3>
-                <p><em>Projection: Danger Cats 131.98, Steeltown Junkies 110.45 (70% to 30% win probability)</em><br>
-                Danger Cats enters as a heavy favorite over the namesake of The Steeltown Junkies East.</p>
-                <ul>
-                    <li><strong>Steeltown Junkies Key Starters:</strong> Drake Maye (19.99 proj.), Kirk Cousins (15.77 proj.), Amon-Ra St. Brown (13.23 proj.)</li>
-                    <li><strong>Danger Cats Key Starters:</strong> Jalen Hurts (20.35 proj.), Jahmyr Gibbs (18.87 proj.), Justin Herbert (18.10 proj.)</li>
-                </ul>
-                <p>With no draft capital spent in the top five rounds, Steeltown Junkies' roster faces a steep climb, relying on Drake Maye and Amon-Ra St. Brown to pull off the upset.</p>
-
-                <h3>Three Dots an a Dash (0-2) vs. Clench Tuxedos (0-2)</h3>
-                <p><em>Projection: Clench Tuxedos 123.18, Three Dots an a Dash 121.82 (51% to 49% win probability)</em><br>
-                Winless Steeltown Junkies East rivals clash in a game with critical early positioning implications.</p>
-                <ul>
-                    <li><strong>Clench Tuxedos Key Starters:</strong> Tyler Shough (21.12 proj.), Jordan Love (19.23 proj.), Kenneth Walker III (15.89 proj.)</li>
-                    <li><strong>Three Dots an a Dash Key Starters:</strong> Jameis Winston (16.56 proj.), Daniel Jones (16.69 proj.), Breece Hall (12.52 proj.)</li>
-                </ul>
-                <p>Clench Tuxedos features Jordan Love and Kenneth Walker III as both teams fight to escape the division basement.</p>
-
-                <h3>Whopper Wentzday (2-0) vs. The Pain Train (1-1)</h3>
-                <p><em>Projection: Whopper Wentzday 134.02, The Pain Train 131.66 (52% to 48% win probability)</em><br>
-                High-scoring Whopper Wentzday West contenders square off.</p>
-                <ul>
-                    <li><strong>Whopper Wentzday Key Starters:</strong> Jared Goff (22.83 proj.), Drew Lock (16.76 proj.), Bijan Robinson (15.39 proj.)</li>
-                    <li><strong>The Pain Train Key Starters:</strong> Patrick Mahomes (23.86 proj.), Kyler Murray (19.56 proj.), Ashton Jeanty (11.67 proj.)</li>
-                </ul>
-                <p>The division's namesake, Whopper Wentzday, looks to extend its undefeated record against Patrick Mahomes and The Pain Train.</p>
-
-                <h3>RUN CMC (1-1) vs. Kyler Duty (1-1)</h3>
-                <p><em>Projection: RUN CMC 127.56, Kyler Duty 114.21 (62% to 38% win probability)</em><br>
-                RUN CMC looks to stay above .500 behind its dual-QB lineup in the Whopper Wentzday West.</p>
-                <ul>
-                    <li><strong>RUN CMC Key Starters:</strong> Lamar Jackson (25.19 proj.), Geno Smith (16.27 proj.), Christian McCaffrey (16.18 proj.)</li>
-                    <li><strong>Kyler Duty Key Starters:</strong> Matthew Stafford (18.53 proj.), Baker Mayfield (18.42 proj.), Kyren Williams (11.66 proj.)</li>
-                </ul>
-                <p>RUN CMC holds a clear edge over Kyler Duty as both franchises attempt to move to 2-1 on the year.</p>
-            </section>
-        </div>
-
-        <!-- Right Column: Standings -->
-        <div>
-            <div class="standings-box">
-                <h3>The Steeltown Junkies East</h3>
-                <ul class="standings-list">
-                    <li><span>Josh Almighty</span> <strong>2-0-0 (386.70 PF)</strong></li>
-                    <li><span>White Bronco</span> <strong>2-0-0 (302.60 PF)</strong></li>
-                    <li><span>Danger Cats</span> <strong>1-1-0 (294.60 PF)</strong></li>
-                    <li><span>Steeltown Junkies</span> <strong>1-1-0 (226.15 PF)</strong></li>
-                </ul>
-                <div class="cutoff">--- Postseason Cutoff / Toilet Bowl Bound ---</div>
-                <ul class="standings-list">
-                    <li><span>Three Dots an a Dash</span> <strong>0-2-0 (273.10 PF)</strong></li>
-                    <li><span>Clench Tuxedos</span> <strong>0-2-0 (266.70 PF)</strong></li>
-                </ul>
+                <div class="standings-box">
+                    <h3>Whopper Wentzday West</h3>
+                    <ul class="standings-list">
+                        <li><span>Whopper Wentzday</span> <strong>3-0-0 (514.15 PF)</strong></li>
+                        <li><span>RUN CMC</span> <strong>2-1-0 (397.30 PF)</strong></li>
+                        <li><span>The Pain Train</span> <strong>1-2-0 (397.75 PF)</strong></li>
+                        <li><span>Marr Burrow Smokes</span> <strong>2-1-0 (321.65 PF)</strong></li>
+                    </ul>
+                    <div class="cutoff">--- Toilet Bowl Bound ---</div>
+                    <ul class="standings-list">
+                        <li><span>Autobots</span> <strong>0-3-0 (314.50 PF)</strong></li>
+                        <li><span>Kyler Duty</span> <strong>1-2-0 (272.65 PF)</strong></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="standings-box">
-                <h3>Whopper Wentzday West</h3>
-                <ul class="standings-list">
-                    <li><span>Whopper Wentzday</span> <strong>2-0-0 (326.85 PF)</strong></li>
-                    <li><span>The Pain Train</span> <strong>1-1-0 (274.05 PF)</strong></li>
-                    <li><span>RUN CMC</span> <strong>1-1-0 (239.15 PF)</strong></li>
-                    <li><span>Marr Burrow Smokes</span> <strong>1-1-0 (185.40 PF)</strong></li>
-                </ul>
-                <div class="cutoff">--- Postseason Cutoff / Toilet Bowl Bound ---</div>
-                <ul class="standings-list">
-                    <li><span>Kyler Duty</span> <strong>1-1-0 (184.10 PF)</strong></li>
-                    <li><span>Autobots</span> 0-2-0 (200.65 PF)</li>
-                </ul>
-            </div>
         </div>
-
     </div>
 
-    <!-- Footer -->
+    <!-- ARCHIVED ISSUE: VOL. 16, ISSUE 2 (WEEK 2 FULL EDITION) -->
+    <div id="issue-vol16-2" class="gazette-issue" style="display: none;">
+        
+        <!-- Masthead -->
+        <div class="masthead">
+            <h1 class="newspaper-title">The Sunday Soap Opera Gazette</h1>
+            <div class="tagline">"All the drama, stats, and heartbreak that fit to print."</div>
+        </div>
+
+        <div class="edition-bar">
+            <span>Vol. 16 — Issue 2</span>
+            <span>Week 2 Recap & Week 3 Previews</span>
+            <span>September 2026</span>
+        </div>
+
+        <!-- Main Headline & Byline -->
+        <h1 class="lead-headline">Purdy and Prescott Spark White Bronco Blowout; Whopper Wentzday Hangs 191 on Autobots</h1>
+        <span class="byline">By Barry Lee Competent | League Beat Writer</span>
+
+        <p>Two weeks into the season, early divisional standings are beginning to take shape across The Sunday Soap Opera. With the bottom two franchises in each six-team division set to be excluded from the postseason and relegated to the Toilet Bowl Tournament—where the consolation prize is the #1 overall pick in next spring's draft—the early pressure on underperforming rosters is mounting.</p>
+        <p>Here is the breakdown of Week 2 action across the league, followed by the Week 3 matchup previews.</p>
+
+        <!-- Main Content Grid -->
+        <div class="grid-2col" style="margin-top: 25px;">
+            
+            <!-- Left Column: Recaps & Previews -->
+            <div>
+                <section>
+                    <h2>Week 2 Game Recaps</h2>
+                    
+                    <h3>White Bronco 170.00, Danger Cats 131.10</h3>
+                    <p>In the marquee matchup of the week, White Bronco capitalized on its 10-pick stash in the top five draft rounds to secure a 38.90-point victory over Danger Cats.</p>
+                    <ul>
+                        <li><strong>White Bronco Key Performers:</strong> Brock Purdy (QB): 35.35 pts | Dak Prescott (QWRT): 38.55 pts | DeVonta Smith (WR): 18.70 pts</li>
+                        <li><strong>Danger Cats Key Performers:</strong> Jahmyr Gibbs (RB): 17.30 pts | Stefon Diggs (WR): 16.70 pts | Justin Herbert (QB): 7.80 pts</li>
+                    </ul>
+                    
+                    <div class="matchup-photo-frame">
+                        <img src="matchup-week2.jpg" alt="White Bronco vs Danger Cats Matchup Graphic">
+                        <div class="photo-caption">WEEK 2 MARQUEE MATCHUP: White Bronco outduels Danger Cats in a high-scoring thriller.</div>
+                    </div>
+
+                    <p>The combined 73.90 points from Purdy and Prescott proved overwhelming for Danger Cats. Danger Cats dropped to 1-1 after starting Justin Herbert over a bench that included Deshaun Watson (25.10 points). White Bronco moves to 2-0 with 302.60 total points forced. For a franchise with a long, painful history of failing to even make the playoffs, sitting near the top of The Steeltown Junkies East feels like uncharted territory—leaving the rest of the league waiting to see if this is a genuine breakthrough or just setting up an even more hilarious late-season collapse.</p>
+
+                    <h3>Whopper Wentzday 191.30, Autobots 109.95</h3>
+                    <p>Whopper Wentzday posted the highest single-week team score of the season, dominating Autobots in an 81.35-point landslide.</p>
+                    <ul>
+                        <li><strong>Whopper Wentzday Key Performers:</strong> Jared Goff (QB): 37.05 pts | Jaxon Smith-Njigba (WR): 34.50 pts | Drew Lock (QWRT): 29.75 pts | Brandon Aubrey (K): 18.00 pts</li>
+                        <li><strong>Autobots Key Performers:</strong> CeeDee Lamb (WR): 27.30 pts | Ja'Marr Chase (WR): 19.50 pts | Aaron Rodgers (QB): 0.85 pts</li>
+                    </ul>
+                    <p>Whopper Wentzday's explosive dual-QB output and nearly 20 points from kicker Brandon Aubrey left Autobots completely behind. Autobots dropped to 0-2 following a zero-touchdown week for several starters, highlighted by Aaron Rodgers finishing with 0.85 points. Missing draft night and handing the wheel to the autodraft algorithm rarely yields gold, and an 81-point thrashing was pure comedy for arch-rival Josh Almighty, who takes immense pleasure in watching Autobots get dismantled. Autobots now sits in the cellar of the Whopper Wentzday West at 0-2.</p>
+
+                    <h3>Josh Almighty 164.65, Clench Tuxedos 124.15</h3>
+                    <p>Josh Almighty maintained its spot atop The Steeltown Junkies East with a decisive victory over Clench Tuxedos.</p>
+                    <ul>
+                        <li><strong>Josh Almighty Key Performers:</strong> Josh Allen (QB): 48.30 pts | Davante Adams (WR): 32.50 pts | Jonathan Taylor (RB): 25.20 pts</li>
+                        <li><strong>Clench Tuxedos Key Performers:</strong> Patriots Defense (DEF): 27.00 pts | Tyler Shough (QWRT): 23.90 pts | Quentin Johnston (WR): 1.40 pts</li>
+                    </ul>
+                    <p>Josh Allen led all scorers across the league with 48.30 points, supported by heavy outputs from Davante Adams and Jonathan Taylor. Through two weeks, Josh Almighty paces the league with 386.70 points forced. Clench Tuxedos falls to 0-2 in year two of the current co-management regime, leaving the team struggling inside The Steeltown Junkies East Toilet Bowl line despite holding extra early draft capital entering the season.</p>
+
+                    <h3>Rivalry Matchup: Steeltown Junkies 127.35, Three Dots an a Dash 100.60</h3>
+                    <p>In one of the league's most heated traditional rivalries, defending champion Steeltown Junkies claimed bragging rights over Three Dots an a Dash in a 26.75-point Steeltown Junkies East battle.</p>
+                    <ul>
+                        <li><strong>Steeltown Junkies Key Performers:</strong> Kirk Cousins (QWRT): 26.75 pts | Amon-Ra St. Brown (WR): 26.20 pts | Tre Tucker (WR): 18.90 pts</li>
+                        <li><strong>Three Dots an a Dash Key Performers:</strong> Jayden Daniels (QWRT): 17.70 pts | Broncos Defense (DEF): 11.00 pts | Jaxson Dart (QB): 1.00 pt</li>
+                    </ul>
+                    <p>These two franchises regularly play for a side-bet case of beer—a wager that Three Dots an a Dash now owes, though Steeltown Junkies’ notorious history of conveniently failing to deliver after losing means Three Dots an a Dash might take its time handing it over. Having traded away its entire inventory of picks in rounds 1 through 5, Steeltown Junkies ran out a paper-thin lineup that held together just long enough behind Kirk Cousins and Amon-Ra St. Brown. Three Dots an a Dash suffered from a 1.00-point performance at starting QB from Jaxson Dart and dropped to 0-2.</p>
+
+                    <h3>RUN CMC 139.10, The Pain Train 109.45</h3>
+                    <p>RUN CMC improved to 1-1 by pulling away from The Pain Train in a 29.65-point Whopper Wentzday West contest.</p>
+                    <ul>
+                        <li><strong>RUN CMC Key Performers:</strong> Devin Lloyd (D): 27.90 pts | Harrison Butker (K): 20.50 pts | James Cook III (RB): 19.90 pts</li>
+                        <li><strong>The Pain Train Key Performers:</strong> Patrick Mahomes (QWRT): 36.80 pts | Jake Ferguson (TE): 16.30 pts | Carson Wentz (QB): 4.75 pts</li>
+                    </ul>
+                    <p>Operating with its signature low-activity management style, RUN CMC produced a balanced lineup backed by defensive linebacker Devin Lloyd's 27.90 points and kicker Harrison Butker's 20.50 points. The Pain Train dropped to 1-1 despite a 36.80-point effort from Patrick Mahomes, as starting QB Carson Wentz managed just 4.75 points.</p>
+
+                    <h3>Kyler Duty 93.35, Marr Burrow Smokes 67.55</h3>
+                    <p>Kyler Duty secured a defensive victory over Marr Burrow Smokes, holding the opposing offense under 70 total points.</p>
+                    <ul>
+                        <li><strong>Kyler Duty Key Performers:</strong> Matthew Stafford (QB): 36.25 pts | Travis Kelce (TE): 16.10 pts | Baker Mayfield (QWRT): 12.00 pts</li>
+                        <li><strong>Marr Burrow Smokes Key Performers:</strong> Joe Burrow (QWRT): 17.25 pts | Texans Defense (DEF): 11.00 pts | Caleb Williams (QB): 5.10 pts</li>
+                    </ul>
+                    <p>Known across the league for struggling to set a complete lineup for 17 consecutive weeks, Kyler Duty submitted a full roster and caught Marr Burrow Smokes on an ideal night. Marr Burrow Smokes laid a season-low 67.55 team points as starting quarterbacks Caleb Williams (5.10 points) and Joe Burrow (17.25 points) failed to generate momentum.</p>
+                </section>
+
+                <section>
+                    <h2>Week 3 Matchup Previews (Archived)</h2>
+
+                    <h3>White Bronco (2-0) vs. Josh Almighty (2-0)</h3>
+                    <p><em>Projection: Josh Almighty 142.31, White Bronco 138.26 (53% to 47% win probability)</em><br>
+                    A battle of undefeated leaders in The Steeltown Junkies East features the league's top-scoring offense in Josh Almighty against the QB-heavy White Bronco.</p>
+
+                    <h3>Marr Burrow Smokes (1-1) vs. Autobots (0-2)</h3>
+                    <p><em>Projection: Autobots 121.49, Marr Burrow Smokes 121.30 (50% to 50% win probability)</em><br>
+                    Both Whopper Wentzday West franchises seek early roster stability.</p>
+
+                    <h3>Steeltown Junkies (1-1) vs. Danger Cats (1-1)</h3>
+                    <p><em>Projection: Danger Cats 131.98, Steeltown Junkies 110.45 (70% to 30% win probability)</em><br>
+                    Danger Cats enters as a heavy favorite over the namesake of The Steeltown Junkies East.</p>
+
+                    <h3>Three Dots an a Dash (0-2) vs. Clench Tuxedos (0-2)</h3>
+                    <p><em>Projection: Clench Tuxedos 123.18, Three Dots an a Dash 121.82 (51% to 49% win probability)</em><br>
+                    Winless Steeltown Junkies East rivals clash in a crucial early battle.</p>
+
+                    <h3>Whopper Wentzday (2-0) vs. The Pain Train (1-1)</h3>
+                    <p><em>Projection: Whopper Wentzday 134.02, The Pain Train 131.66 (52% to 48% win probability)</em><br>
+                    High-scoring Whopper Wentzday West contenders square off.</p>
+
+                    <h3>RUN CMC (1-1) vs. Kyler Duty (1-1)</h3>
+                    <p><em>Projection: RUN CMC 127.56, Kyler Duty 114.21 (62% to 38% win probability)</em><br>
+                    RUN CMC holds a clear edge over Kyler Duty in the West division battle.</p>
+                </section>
+            </div>
+
+            <!-- Right Column: Standings -->
+            <div>
+                <div class="standings-box">
+                    <h3>The Steeltown Junkies East</h3>
+                    <ul class="standings-list">
+                        <li><span>Josh Almighty</span> <strong>2-0-0 (386.70 PF)</strong></li>
+                        <li><span>White Bronco</span> <strong>2-0-0 (302.60 PF)</strong></li>
+                        <li><span>Danger Cats</span> <strong>1-1-0 (294.60 PF)</strong></li>
+                        <li><span>Steeltown Junkies</span> <strong>1-1-0 (226.15 PF)</strong></li>
+                    </ul>
+                    <div class="cutoff">--- Toilet Bowl Bound ---</div>
+                    <ul class="standings-list">
+                        <li><span>Three Dots an a Dash</span> <strong>0-2-0 (273.10 PF)</strong></li>
+                    </ul>
+                </div>
+
+                <div class="standings-box">
+                    <h3>Whopper Wentzday West</h3>
+                    <ul class="standings-list">
+                        <li><span>Whopper Wentzday</span> <strong>2-0-0</strong></li>
+                        <li><span>RUN CMC</span> <strong>1-1-0</strong></li>
+                        <li><span>Marr Burrow Smokes</span> <strong>1-1-0</strong></li>
+                        <li><span>The Pain Train</span> <strong>1-1-0</strong></li>
+                    </ul>
+                    <div class="cutoff">--- Toilet Bowl Bound ---</div>
+                    <ul class="standings-list">
+                        <li><span>Kyler Duty</span> <strong>1-1-0</strong></li>
+                        <li><span>Autobots</span> <strong>0-2-0 (224.95 PF)</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <div class="footer">
-        Published weekly from the desk of League Beat Writer Barry Lee Competent • Team White Bronco Headquarters
+        &copy; 2026 The Sunday Soap Opera Gazette. Printed in North Dumfries, Ontario.
     </div>
 
 </div>
+
+<!-- JavaScript for Archive Switching -->
+<script>
+    function switchIssue(issueId) {
+        // Hide all issues
+        const issues = document.querySelectorAll('.gazette-issue');
+        issues.forEach(issue => issue.style.display = 'none');
+
+        // Show target issue
+        const target = document.getElementById(issueId);
+        if (target) target.style.display = 'block';
+
+        // Reset button styles
+        const buttons = document.querySelectorAll('.issue-btn');
+        buttons.forEach(btn => {
+            btn.style.background = 'transparent';
+            btn.style.color = '#444';
+            btn.style.border = '1px solid #888';
+            btn.style.fontWeight = 'normal';
+        });
+
+        // Set active button style
+        const activeBtn = document.getElementById('btn-' + issueId.replace('issue-', ''));
+        if (activeBtn) {
+            activeBtn.style.background = '#222';
+            activeBtn.style.color = '#f4ecd8';
+            activeBtn.style.border = '1px solid #222';
+            activeBtn.style.fontWeight = 'bold';
+        }
+    }
+</script>
 
 </body>
 </html>
