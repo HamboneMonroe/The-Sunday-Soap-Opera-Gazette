@@ -3,38 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sunday Soap Opera Gazette - Vol. 16, Issue 10</title>
+    <title>The Sunday Soap Opera Gazette - Vol. 16, Issue 11</title>
     <style>
         :root {
-            --primary-dark: #1a1a1a;
-            --paper-bg: #f4f1ea;
-            --ink-black: #2b2b2b;
-            --border-color: #333;
+            --primary-dark: #1f1913;
+            --paper-bg: #e8dcc4;
+            --paper-box: #dfd1b5;
+            --ink-black: #262019;
+            --border-color: #2f261d;
+            --accent-red: #7a1c1c;
         }
 
         body {
-            background-color: #d6d0c4;
+            background-color: #b5a68c;
+            background-image: radial-gradient(circle at center, #c4b69c 0%, #9e8e73 100%);
             color: var(--ink-black);
-            font-family: 'Georgia', serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             margin: 0;
-            padding: 20px;
+            padding: 25px 15px;
         }
 
         .newspaper-container {
             max-width: 1000px;
             background-color: var(--paper-bg);
+            background-image: 
+                radial-gradient(rgba(112, 88, 56, 0.08) 1px, transparent 0),
+                radial-gradient(rgba(92, 70, 42, 0.06) 1px, transparent 0),
+                linear-gradient(to bottom, rgba(255, 248, 231, 0.35), rgba(168, 142, 104, 0.25));
+            background-size: 24px 24px, 37px 37px, 100% 100%;
+            background-position: 0 0, 13px 17px, 0 0;
             margin: 0 auto;
             padding: 40px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            border: 1px solid #dcd6cd;
+            box-shadow: 
+                0 14px 32px rgba(0, 0, 0, 0.45),
+                inset 0 0 80px rgba(128, 100, 64, 0.32);
+            border: 1px solid #9c8b70;
         }
 
         /* Masthead */
         .masthead {
             text-align: center;
-            border-bottom: 3px double var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 15px;
+            border-bottom: 4px double var(--border-color);
+            padding-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .newspaper-title {
@@ -44,12 +55,13 @@
             letter-spacing: 2px;
             margin: 0;
             color: var(--primary-dark);
+            text-shadow: 1px 1px 0px rgba(255, 250, 240, 0.6);
         }
 
         .tagline {
             font-style: italic;
             font-size: 1rem;
-            color: #555;
+            color: #4a3f33;
             margin-top: 5px;
         }
 
@@ -57,12 +69,13 @@
             display: flex;
             justify-content: space-between;
             border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
             padding: 6px 0;
             font-size: 0.85rem;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
+            color: var(--primary-dark);
         }
 
         /* Main Headline */
@@ -79,12 +92,12 @@
         .byline {
             font-style: italic;
             font-size: 0.9rem;
-            color: #444;
+            color: #3d3328;
             text-align: center;
             margin-bottom: 20px;
             display: block;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
+            padding-bottom: 14px;
         }
 
         /* Layout Columns */
@@ -96,7 +109,7 @@
 
         section {
             margin-bottom: 25px;
-            border-bottom: 1px solid #dcd6cd;
+            border-bottom: 1px solid #b5a488;
             padding-bottom: 20px;
         }
 
@@ -107,15 +120,16 @@
             padding-bottom: 4px;
             margin-top: 0;
             text-transform: uppercase;
+            color: var(--primary-dark);
         }
 
         h3 {
             font-family: 'Times New Roman', serif;
             font-size: 1.1rem;
-            margin-top: 15px;
+            margin-top: 16px;
             margin-bottom: 8px;
             color: var(--primary-dark);
-            border-bottom: 1px dotted #999;
+            border-bottom: 1px dotted #7d6d58;
             padding-bottom: 2px;
         }
 
@@ -137,6 +151,21 @@
             line-height: 1.4;
         }
 
+        /* Editorial Box */
+        .editorial-box {
+            background-color: var(--paper-box);
+            border: 2px solid var(--border-color);
+            padding: 18px 20px;
+            margin: 22px 0;
+            box-shadow: inset 0 0 25px rgba(120, 95, 60, 0.18);
+        }
+
+        .editorial-box h2 {
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
         /* Custom Grade Badges */
         .grade-badge {
             display: inline-block;
@@ -144,33 +173,33 @@
             border: 1px solid var(--border-color);
             font-weight: bold;
             font-size: 0.8rem;
-            background-color: #e0d9cc;
+            background-color: #d8c8a8;
             margin-right: 8px;
             margin-bottom: 4px;
         }
 
         .grade-aplus {
-            background-color: #86efac;
-            color: #14532d;
-            border-color: #14532d;
+            background-color: #9ec496;
+            color: #163812;
+            border-color: #163812;
         }
 
         .grade-b {
-            background-color: #fef08a;
-            color: #854d0e;
-            border-color: #854d0e;
+            background-color: #e3cf86;
+            color: #4f3d08;
+            border-color: #4f3d08;
         }
 
         .grade-f {
-            background-color: #fca5a5;
-            color: #7f1d1d;
-            border-color: #7f1d1d;
+            background-color: #d9938c;
+            color: #54140e;
+            border-color: #54140e;
         }
 
         /* Photo Frame */
         .matchup-photo-frame {
             border: 2px solid var(--border-color);
-            background-color: #eae5dc;
+            background-color: var(--paper-box);
             padding: 12px;
             text-align: center;
             margin: 15px 0;
@@ -181,22 +210,24 @@
             height: auto;
             display: block;
             margin: 0 auto;
-            border: 1px solid #999;
+            border: 1px solid #6e5e49;
+            filter: sepia(12%) contrast(102%);
         }
 
         .photo-caption {
             font-size: 0.8rem;
             font-style: italic;
-            color: #555;
+            color: #453a2e;
             margin-top: 8px;
         }
 
         /* Standings Box */
         .standings-box {
-            background-color: #eae5dc;
-            border: 1px solid #999;
+            background-color: var(--paper-box);
+            border: 1px solid #7d6d58;
             padding: 15px;
             margin-bottom: 20px;
+            box-shadow: inset 0 0 20px rgba(120, 95, 60, 0.15);
         }
 
         .standings-box h3 {
@@ -215,7 +246,7 @@
 
         .standings-list li {
             padding: 4px 0;
-            border-bottom: 1px dotted #ccc;
+            border-bottom: 1px dotted #9e8d74;
             display: flex;
             justify-content: space-between;
         }
@@ -224,9 +255,9 @@
             text-align: center;
             font-size: 0.75rem;
             font-weight: bold;
-            color: #8b0000;
-            border-top: 1px dashed #8b0000;
-            border-bottom: 1px dashed #8b0000;
+            color: var(--accent-red);
+            border-top: 1px dashed var(--accent-red);
+            border-bottom: 1px dashed var(--accent-red);
             padding: 3px 0;
             margin: 6px 0;
             text-transform: uppercase;
@@ -236,9 +267,9 @@
             text-align: center;
             font-weight: bold;
             font-size: 0.95rem;
-            background: #e0d9cc;
+            background: var(--paper-box);
             padding: 8px;
-            border: 1px solid #999;
+            border: 1px solid #7d6d58;
             margin-bottom: 15px;
         }
 
@@ -246,8 +277,9 @@
             text-align: center;
             font-size: 0.8rem;
             font-style: italic;
+            color: #453a2e;
             margin-top: 30px;
-            border-top: 1px solid var(--border-color);
+            border-top: 2px solid var(--border-color);
             padding-top: 10px;
         }
     </style>
@@ -256,8 +288,8 @@
 
 <div class="newspaper-container">
 
-    <!-- ISSUE VOLUME 16, ISSUE 10 -->
-    <div id="issue-vol16-10" class="gazette-issue">
+    <!-- ISSUE VOLUME 16, ISSUE 11 -->
+    <div id="issue-vol16-11" class="gazette-issue">
         
         <!-- Masthead -->
         <div class="masthead">
@@ -266,16 +298,16 @@
         </div>
 
         <div class="edition-bar">
-            <span>Vol. 16 — Issue 10</span>
-            <span>Week 10 Recap & Week 11 Previews</span>
+            <span>Vol. 16 — Issue 11</span>
+            <span>Week 11 Recap & Week 12 Previews</span>
             <span>November 2026</span>
         </div>
 
         <!-- Main Headline & Byline -->
-        <h1 class="lead-headline">DANGER CATS COUGH UP A CAT-ASTROPHIC HAIRBALL IN KIRK COUSINS DEBUT; THREE DOTS PUBLICLY EXECUTES STEELTOWN; BARRY GOES A GODLIKE 6-0!</h1>
+        <h1 class="lead-headline">WHITE BRONCO DETONATES JOSH ALMIGHTY IN 70-POINT EAST EXECUTION; THE PAIN TRAIN LEAPFROGS RUN CMC IN WEST SEEDING; BI-MANAGERS RAID THREE DOTS FOR CHASE BROWN!</h1>
         <span class="byline">By Barry Lee Competent | League Beat Writer & Chief Front Office Investigator</span>
 
-        <p>Stop the presses, call animal control, and bow down to your omniscient beat writer! Week 10 in The Sunday Soap Opera featured a purr-fectly hiss-terical litter-box collapse by the Danger Cats in their shiny new Kirk Cousins era, a criminal 42.30-point crime scene in Steeltown that required yellow police tape, and three blockbuster trades that turned the front office wire into a black-market flea market. Most importantly, yours truly predicted every single winner on the slate for a pristine 6-0 sweep. You're welcome, America.</p>
+        <p>Stop the presses, lock the cabin doors, and strap on your crash helmets! Week 11 in The Sunday Soap Opera featured a 70.45-point East division beatdown that rattled the fillings out of Josh Almighty's teeth, a West playoff-seeding power move by The Pain Train, a feline-on-Steeltown hairball fight where both teams forgot how to play football, and a pre-kickoff trade raid by the Bi-Managers at Clench Tuxedos.</p>
 
         <!-- Main Content Grid -->
         <div class="grid-2col" style="margin-top: 25px;">
@@ -283,140 +315,136 @@
             <!-- Left Column: Recaps & Previews -->
             <div>
                 <section>
-                    <h2>WEEK 10 GAME RECAPS</h2>
+                    <h2>WEEK 11 GAME RECAPS</h2>
                     
-                    <h3>MATCHUP OF THE WEEK: White Bronco 143.70, Danger Cats 120.25</h3>
+                    <h3>MATCHUP OF THE WEEK: White Bronco 177.50, Josh Almighty 107.05</h3>
                     
-                    <p>In our official marquee East division showdown presented by <em>Sam N Ella's Chicken</em>, White Bronco’s two-headed quarterback monster declawed the Danger Cats, galloping to a 143.70 to 120.25 beatdown that had the felines hissing in the corner.</p>
+                    <p>In our official Week 11 Marquee Matchup of the Week presented by <em>Gassy Gus's Artisanal Bean & Mattress Outlet</em>, White Bronco didn't just defend first place in the East—they ran Josh Almighty off the highway in a merciless 177.50 to 107.05 annihilation.</p>
                     
                     <ul>
-                        <li><strong>White Bronco Key Performers:</strong> D. Prescott (QWRT): 43.85 pts || B. Purdy (QB): 36.55 pts || C. Lamb (WR): 13.20 pts || D. London (WR): 10.90 pts || B. Corum (RB - BN): 17.90 pts</li>
-                        <li><strong>Danger Cats Key/Lowest:</strong> J. Gibbs (RB): 37.20 pts || K. Cousins (QB): 17.45 pts || B. Tuten (RB): 17.30 pts || C. McLaughlin (K): 0.00 pts (BYE) || Empty D Slot: 0.00 pts</li>
+                        <li><strong>White Bronco Key Performers:</strong> D. Prescott (QWRT): 47.15 pts || B. Purdy (QB): 29.75 pts || J. Williams (RB): 21.10 pts || T. Bass (K): 21.00 pts || C. Lamb (WR): 19.20 pts</li>
+                        <li><strong>Josh Almighty Key/Lowest:</strong> Bears DEF: 24.00 pts || D. Moore (WR): 15.10 pts || D. Henry (RB): 14.10 pts || J. Taylor (RB): 2.70 pts || J. Allen (QB): 12.20 pts</li>
                     </ul>
 
                     <div class="matchup-photo-frame">
-                        <img src="week10photo.jpg" alt="White Bronco vs Danger Cats Matchup Graphic">
-                        <div class="photo-caption">MATCHUP OF THE WEEK: CAT-ASTROPHE IN THE LITTER BOX! The Danger Cats mortgage a 5th-round pick for Kirk Cousins only to cough up a massive hairball—starting a bye-week kicker and an empty defensive slot while kissing their momentum goodbye.</div>
+                        <img src="week11photo.jpg" alt="White Bronco vs Josh Almighty Matchup Graphic">
+                        <div class="photo-caption">MATCHUP OF THE WEEK: STAMPEDE FOR THE THRONE! Dak Prescott (47.15) and Brock Purdy (29.75) drop 76.90 combined points while Josh Allen (12.20) and Jonathan Taylor (2.70) completely vanish in the biggest game of the year.</div>
                     </div>
 
-                    <p>Curiosity didn't just kill the Cats this Sunday—front-office malpractice neutered them! Fresh off mortgaging a 5th-round draft pick to bring in "QB3" Kirk Cousins, the Danger Cats marched into their marquee showdown screaming <em>"You like that?!"</em>—only to watch Cousins deliver a lukewarm 17.45-point Kohl's Cash special while they bizarrely paired him in Superflex with Michael Penix Jr. (11.20), leaving Deshaun Watson (19.50) and Justin Herbert (15.55) locked in the kennel on the bench! Even worse, the stray Cats showed up to a heavyweight fight without a kicker (starting Chase McLaughlin on a Bye for 0.00) and left an entire defensive slot completely empty (0.00). Dak Prescott (43.85) and Brock Purdy (36.55) laughed their way to 80.40 combined points, burying Jahmyr Gibbs' 37.20-point masterpiece and sending the humbled tabbies slinking down to 5-5-0 with their tails firmly between their legs.</p>
+                    <p>Coming off a 181-point explosion in Week 10, Josh Almighty walked into Sunday looking like an unstoppable juggernaut—and left looking like roadkill. Dak Prescott went nuclear with 47.15 points, Brock Purdy added 29.75, Javonte Williams chipped in 21.10, and kicker Tyler Bass booted 21.00 points all by himself! Meanwhile, Josh Allen (12.20), Trevor Lawrence (12.75), and Jonathan Taylor (2.70) all went on unannounced vacation, leaving Jacoby Brissett's 16.50 points stranded on the bench. White Bronco improves to 9-2-0 with a two-game stranglehold on the East!</p>
 
-                    <h3>Josh Almighty 181.00, Clench Tuxedos 141.10</h3>
+                    <h3>The Pain Train 149.10, RUN CMC 108.60</h3>
                     
-                    <p>In a breathtaking 322-point firework show that melted the scoreboard, Josh Almighty unleashed a thermonuclear artillery barrage to conquer Clench Tuxedos 181.00 to 141.10.</p>
-                    
-                    <ul>
-                        <li><strong>Josh Almighty Key Performers:</strong> T. Lawrence (QWRT): 34.30 pts || J. Allen (QB): 25.30 pts || D. Samuel Sr. (WR): 23.90 pts || I. Likely (TE): 19.70 pts || D. Moore (WR): 16.40 pts</li>
-                        <li><strong>Clench Tuxedos Key Performers:</strong> E. Johnson (RB): 29.10 pts || C. Stroud (QWRT): 26.55 pts || A. St. Brown (WR): 22.80 pts || Bills DEF: 18.00 pts</li>
-                    </ul>
-
-                    <p>Any other week, Clench Tuxedos’ 141.10 points—fueled by Emmett Johnson erupting for 29.10 and C.J. Stroud dropping 26.55—would have been a stress-free walk in the park. Unfortunately for the synchronized Bi-Managers, they stepped directly in front of a freight train. Trevor Lawrence went full Super Saiyan with 34.30 points at Superflex, Josh Allen chipped in 25.30, and Deebo Samuel Sr. added 23.90 to launch Josh Almighty to 7-3-0 while Clench Tuxedos dips to 5-5-0 despite leading the entire East in total points scored.</p>
-
-                    <h3>Three Dots an a Dash 154.55, Steeltown Junkies 42.30</h3>
-                    
-                    <p>Sound the air-raid sirens, throw rose petals at their feet, and erect a bronze statue of Three Dots an a Dash in the town square! Fresh off our scathing investigation into Steeltown’s front-office felony, TDnD delivered a biblical 154.55 to 42.30 public execution for their SECOND straight victory!</p>
+                    <p>Choo-choo, mother-lovers! Looking to upgrade their playoff seating, The Pain Train blew straight through RUN CMC’s station in a 149.10 to 108.60 statement victory.</p>
                     
                     <ul>
-                        <li><strong>Three Dots Key Performers:</strong> J. Daniels (QB): 26.25 pts || C. Little (K): 23.00 pts || Rams DEF: 23.00 pts || C. Brown (RB): 20.30 pts || D. Metcalf (WR): 11.40 pts</li>
-                        <li><strong>Steeltown Lowest Performers:</strong> Steelers DEF: -2.00 pts || M. Gesicki (TE): 0.90 pts || G. Bernard (QWRT): 1.00 pts || T. Watt (D): 1.00 pts || D. Maye (QB): 2.50 pts</li>
+                        <li><strong>The Pain Train Key Performers:</strong> P. Mahomes (QB): 33.20 pts || A. Jeanty (RB): 23.90 pts || C. Ward (QWRT): 23.70 pts || J. Croskey-Merritt (RB - BN): 13.70 pts</li>
+                        <li><strong>RUN CMC Key/Lowest:</strong> G. Smith (QB): 26.20 pts || J. Cook III (RB): 15.20 pts || C. McCaffrey (QWRT): 12.20 pts || B. Bowers (TE): 0.00 pts</li>
                     </ul>
 
-                    <p>TDnD didn't just win—they beat Steeltown by 112.25 points while leaving J.J. McCarthy's 21.05 on the bench! Jayden Daniels (26.25), Chase Brown (20.30), kicker Cam Little (23.00), and the Rams defense (23.00) turned Sunday into a victory parade. Meanwhile, Steeltown Junkies posted a horrifying 42.30 points—a score so putrid it violates the Geneva Convention. Having shipped Kirk Cousins to the Danger Cats, Steeltown was reduced to starting wide receiver G. Bernard in the Superflex spot for 1.00 point while the Steelers defense coughed up -2.00. TDnD struts to 3-7-0 with all the swagger in the universe!</p>
+                    <p>Patrick Mahomes (33.20), Ashton Jeanty (23.90), and Cam Ward (23.70) turned Sunday into a demolition derby, propelling The Pain Train to 5-6-0 and vaulting them past RUN CMC into the #3 seed in the West on the Points For tiebreaker (1399.55 to 1341.55)! Both squads remain safely inside the top-four playoff cut line, though RUN CMC got 26.20 from Geno Smith only to watch Brock Bowers lay a big fat goose egg (0.00) while Christian McCaffrey mustered a mortal 12.20.</p>
 
-                    <h3>Whopper Wentzday 158.45, Kyler Duty 148.05</h3>
+                    <h3>Whopper Wentzday 150.80, Autobots 75.85</h3>
                     
-                    <p>In the cruelest prank by the fantasy gods all season, Kyler Duty finally woke up from a nine-week coma to drop 148.05 points—only to get flattened by Whopper Wentzday’s 158.45-point grease truck.</p>
+                    <p>The Burger King kept his grill sizzling at 500 degrees, doubling up the bye-ravaged Autobots syndicate 150.80 to 75.85 to stay tied with White Bronco for the best record in the league.</p>
                     
                     <ul>
-                        <li><strong>Whopper Key Performers:</strong> Vikings DEF: 32.00 pts || J. Goff (QWRT): 26.45 pts || J. Smith-Njigba (WR): 24.10 pts || D. Lock (QB): 18.00 pts</li>
-                        <li><strong>Kyler Duty Key Performers:</strong> G. Pickens (WR): 32.50 pts || C. Hubbard (RB): 29.20 pts || M. Stafford (QB): 25.25 pts || C. Skattebo (RB): 24.20 pts</li>
+                        <li><strong>Whopper Key Performers:</strong> J. Goff (QWRT): 27.15 pts || M. Evans (WR): 16.90 pts || J. Williams (WR): 16.30 pts || J. Rodriguez (D): 16.10 pts || B. Irving (RB): 16.00 pts</li>
+                        <li><strong>Autobots Key/Lowest:</strong> F. Mendoza (QB): 26.55 pts || Cowboys DEF: 11.00 pts || J. Chase (WR): 3.10 pts || M. Jones (D): 0.00 pts (BYE)</li>
                     </ul>
 
-                    <p>Kyler Duty got career days from George Pickens (32.50), Chuba Hubbard (29.20), and Cam Skattebo (24.20), and still went home empty-handed! Why? Because Jared Goff put down the expired tartar sauce (26.45) and the Minnesota Vikings defense dropped an obscene 32.00 points to save the Burger King’s bacon. Whopper improves to 8-2-0 atop the West, while Kyler Duty stays locked in the dungeon at 2-8-0.</p>
+                    <p>Fresh off his Wednesday trade spree, Whopper Wentzday immediately cashed in on newly acquired Jameson Williams (16.30) and Aaron Rodgers (15.25), while Jared Goff tossed 27.15 points of Grade-A beef. The Autobots mob had six players on bye, started a bye-week defender (0.00), and got just 3.10 points from Ja'Marr Chase—dropping to 2-9-0 as they count down the days until the 2027 draft.</p>
 
-                    <h3>Marr Burrow Smokes 148.55, RUN CMC 115.90</h3>
+                    <h3>Marr Burrow Smokes 144.35, Kyler Duty 112.25</h3>
                     
-                    <p>Marr Burrow Smokes kept their foot welded to the floorboard, blowing past RUN CMC 148.55 to 115.90 in a crucial West division showdown.</p>
+                    <p>Marr Burrow Smokes handled business without breaking a sweat, extinguishing Kyler Duty 144.35 to 112.25 to keep pace in the West.</p>
                     
                     <ul>
-                        <li><strong>Marr Burrow Key Performers:</strong> J. Burrow (QWRT): 44.25 pts || P. Washington (WR): 21.20 pts || A. Jones Sr. (RB): 11.50 pts || Texans DEF: 11.00 pts</li>
-                        <li><strong>RUN CMC Key/Lowest:</strong> C. McCaffrey (QWRT): 42.30 pts || J. Cook III (RB): 22.70 pts || X. Worthy (WR): 0.00 pts || A. Singleton (D): 0.00 pts (BYE)</li>
+                        <li><strong>Marr Burrow Key Performers:</strong> J. Coleman (RB): 30.90 pts || J. Burrow (QWRT): 23.90 pts || Texans DEF: 19.00 pts || C. Williams (QB): 17.15 pts || G. Kittle (TE - BN): 15.40 pts</li>
+                        <li><strong>Kyler Duty Key/Lowest:</strong> C. Hubbard (RB): 24.00 pts || B. Mayfield (QB): 20.95 pts || T. Kelce (TE): 19.40 pts || C. Sutton (WR): 0.00 pts || T. Smack (K): 0.00 pts (BYE)</li>
                     </ul>
 
-                    <p>Joe Burrow (44.25) and Christian McCaffrey (42.30) traded haymakers in a Superflex duel for the ages, practically cancelling each other out. The difference? Marr Burrow got 21.20 points from Parker Washington and a complete team effort, whereas RUN CMC started Alex Singleton on a Bye week (0.00) and got a big fat zero from Xavier Worthy. Marr Burrow cruises to 7-3-0 while RUN CMC slips to 5-5-0.</p>
+                    <p>Jonathon Coleman erupted for 30.90 points alongside Joe Burrow (23.90) and the Texans defense (19.00) to push Marr Burrow Smokes to 8-3-0. Kyler Duty actually got strong outings from Chuba Hubbard (24.00), Baker Mayfield (20.95), and Travis Kelce (19.40), but starting a bye-week kicker, a bye-week linebacker, and zero-point Courtland Sutton kept them anchored to the bottom of the West at 2-9-0.</p>
 
-                    <h3>The Pain Train 147.45, Autobots 100.15</h3>
+                    <h3>Clench Tuxedos 134.40, Three Dots an a Dash 113.70</h3>
                     
-                    <p>Choo-choo, baby! Back on the rails and hunting souls, The Pain Train roared through town at 120 miles per hour, flattening the Autobots mob 147.45 to 100.15.</p>
+                    <p>The fairy-tale winning streak is officially over! After pulling off a pre-game trade to pry running back Chase Brown away from Three Dots an a Dash, the synchronized Bi-Managers at Clench Tuxedos snapped TDnD’s two-game heater with a 134.40 to 113.70 victory.</p>
                     
                     <ul>
-                        <li><strong>The Pain Train Key Performers:</strong> P. Mahomes (QB): 48.90 pts || C. Ward (QWRT): 23.45 pts || Lions DEF: 17.00 pts || J. Price (RB): 10.40 pts</li>
-                        <li><strong>Autobots Key/Lowest:</strong> J. Chase (WR): 23.10 pts || W. Reichard (K): 14.00 pts || C. Tate (QWRT): 0.00 pts || O. Hampton (RB - BN): 16.50 pts</li>
+                        <li><strong>Clench Tuxedos Key Performers:</strong> C. Stroud (QB): 27.40 pts || E. Johnson (RB): 20.30 pts || N. Collins (WR): 12.80 pts || M. Nabers (WR): 11.50 pts || C. Brown (RB): 3.60 pts</li>
+                        <li><strong>Three Dots Key/Lowest:</strong> Broncos DEF: 19.00 pts || J. McCarthy (QWRT): 17.95 pts || J. Daniels (QB): 16.95 pts || B. Hall (RB): 16.00 pts || D. Metcalf (WR): 0.20 pts</li>
                     </ul>
 
-                    <p>Patrick Mahomes went full scorched-earth with 48.90 points, pairing with Cam Ward’s 23.45 to rocket The Pain Train to 4-6-0 and right back into the West playoff hunt. Meanwhile, the Autobots syndicate—still wearing the mob badge this very paper gave them—tried to get cute by starting wideout C. Tate in their Superflex spot (0.00) while leaving Omarion Hampton’s 16.50 points rotting on the bench. The mob drops to 2-8-0, though they immediately hit the burner phones to cook up another trade.</p>
+                    <p>Ironically, Chase Brown celebrated his debut in a Tuxedo by laying a 3.60-point egg against his old club! Fortunately for the Bi-Managers, C.J. Stroud (27.40) and last week's trade prize Emmett Johnson (20.30) carried the load to push them back over .500 at 6-5-0, where they still boast the second-highest Points For in the entire league (1609.50). TDnD got solid quarterback play from J.J. McCarthy (17.95) and Jayden Daniels (16.95), but D.K. Metcalf’s 0.20-point disappearance doomed them to 3-8-0.</p>
+
+                    <h3>Danger Cats 93.35, Steeltown Junkies 76.50</h3>
+                    
+                    <p>In a "Kirk Cousins Custody Bowl" so ugly it should have been aired behind a parental advisory warning, the Danger Cats clawed past Steeltown Junkies 93.35 to 76.50.</p>
+                    
+                    <ul>
+                        <li><strong>Danger Cats Key/Lowest:</strong> J. Gibbs (RB): 23.80 pts || J. Sherwood (D): 11.50 pts || T. Pollard (RB): 11.00 pts || K. Cousins (QB): 7.75 pts || 2 Empty Slots: 0.00 pts || J. Herbert (BN): 21.75 pts</li>
+                        <li><strong>Steeltown Key/Lowest:</strong> H. Butker (K): 15.00 pts || D. Montgomery (RB): 12.40 pts || K. McCord (QB): 1.00 pts || K. Black (QWRT): 1.50 pts</li>
+                    </ul>
+
+                    <p>Stop me if you’ve heard this one before: the Danger Cats left TWO starting lineup spots completely empty (a WR slot AND a defensive slot!), left Justin Herbert’s 21.75 points locked in a litter box on the bench, watched Kirk Cousins cough up a pathetic 7.75-point hairball against his former owners, and STILL WON! Why? Because Steeltown Junkies trotted out Kyle McCord (1.00) and K. Black (1.50) at Superflex, letting Harrison Butker (15.00) lead their entire franchise in scoring. The stray Cats stumble to 6-5-0 while Steeltown tumbles to 4-7-0.</p>
                 </section>
+
+                <!-- EDITORIAL FEATURE: WHITE BRONCO HYPE OR CURSED -->
+                <div class="editorial-box">
+                    <h2>EDITORIAL DESK: ARE WE BUYING THE WHITE BRONCO HYPE, OR ARE THEY DESIGNED TO REMAIN CURSED?</h2>
+                    <p><strong>By Barry Lee Competent</strong></p>
+                    <p>At 9-2-0 with 1,628.40 points scored and a 70-point public flogging of Josh Almighty fresh in the rearview mirror, White Bronco is currently parading around the East like they already booked the engraver for the championship trophy. On paper, it is easy to see why the bandwagon is overflowing: Dak Prescott (47.15) and Brock Purdy (29.75) are operating like a two-headed cheat code, Bo Nix is lounging on the bench as luxury Superflex insurance, and CeeDee Lamb, Drake London, Chris Olave, Javonte Williams, and Tucker Kraft give them legitimate firepower across the board.</p>
+                    <p>Hold your horses, though—before we crown them, let’s remember whose nameplate is bolted to the hood. This is <em>White Bronco</em>, a franchise historically engineered to step on a garden rake the exact nanosecond the playoffs begin! Look beneath that shiny 177.50-point hood in Week 11: their entire offense lives and dies on Dak and Purdy combining for 75 to 80 points every Sunday, while their supporting skill slots—Jaylen Warren (2.90), Adonai Mitchell (3.00), and Tyler Warren (2.20)—did little more than get their cardio in. When the cold December winds blow and one of those quarterbacks inevitably turns back into a pumpkin in Week 15, there is no bell-cow RB1 safety net waiting to catch them. Until they actually survive a postseason Sunday without choking on a hairball, this beat writer is enjoying the show—with one hand firmly on the curse alarm.</p>
+                </div>
 
                 <!-- SPECIAL INVESTIGATIVE REPORT / TRADES -->
                 <section>
-                    <h2>FRONT OFFICE WIRE: BLOCKBUSTER TRADE BONANZA</h2>
+                    <h2>FRONT OFFICE WIRE: BI-MANAGERS RAID TDnD!</h2>
                     
-                    <h3>Trade 1: Whopper Wentzday & Autobots (Nov 11)</h3>
-                    <p><strong>Whopper Wentzday Receives:</strong> J. Dobbins (RB), J. Williams (WR), A. Rodgers (QB), Round 2 pick, Round 3 pick<br>
-                    <strong>Autobots Receive:</strong> J. Downs (WR), D. Waller (TE), Z. Charbonnet (RB), Round 1 pick, Round 6 pick</p>
-                    <p><span class="grade-badge grade-aplus">Whopper Wentzday: Grade A-</span> <span class="grade-badge grade-b">Autobots: Grade B</span></p>
-                    <p>The Autobots mob struck again on Wednesday afternoon, prying yet another coveted 1st-round pick out of a contender's pocket to fund their 2027 rebuild. However, unlike their previous daylight robberies, the syndicate actually had to pay retail this time—handing over a 2nd, a 3rd, Jameson Williams, J.K. Dobbins, and starting Superflex QB Aaron Rodgers to an 8-2 Whopper Wentzday juggernaut loading up for a title run.</p>
-
-                    <h3>Trade 2: White Bronco & Kyler Duty (Nov 11)</h3>
-                    <p><strong>White Bronco Receives:</strong> B. Nix (QB), T. Kraft (TE), Round 11 pick, Round 11 pick (Autobots), Round 13 pick<br>
-                    <strong>Kyler Duty Receives:</strong> Q. Judkins (RB), K. McCord (QB), Round 3 pick, Round 6 pick, Round 7 pick (Josh Almighty)</p>
-                    <p><span class="grade-badge grade-aplus">White Bronco: Grade A</span> <span class="grade-badge grade-b">Kyler Duty: Grade B+</span></p>
-                    <p>Just 29 minutes after Whopper made a splash, East co-leader White Bronco answered by acquiring Bo Nix and Tucker Kraft! In a Superflex league, giving an 8-2 contender a third starting quarterback alongside Brock Purdy and Dak Prescott is practically illegal—and unlike the Danger Cats' Cousins experiment, Bronco actually won their game! Meanwhile, Kyler Duty waves the white flag on 2026 and walks away with RB Quinshon Judkins and a haul of 3rd, 6th, and 7th-round draft picks.</p>
-
-                    <h3>Trade 3: Steeltown Junkies & Clench Tuxedos (Nov 14)</h3>
-                    <p><strong>Steeltown Junkies Receive:</strong> P. Nacua (WR), Round 15 pick (Steeltown Junkies)<br>
-                    <strong>Clench Tuxedos Receive:</strong> E. Johnson (RB), Round 3 pick</p>
-                    <p><span class="grade-badge grade-b">Steeltown Junkies: Grade B+</span> <span class="grade-badge grade-aplus">Clench Tuxedos: Grade A-</span></p>
-                    <p>Evidently traumatized by scoring 42.30 points last week, Steeltown Junkies marched into Saturday night and bought superstar receiver Puka Nacua! On the other side, the Bi-Managers at Clench Tuxedos continue playing 4D chess—flipping a sidelined Nacua for running back Emmett Johnson (fresh off a 29.10-point explosion in Week 10) plus a juicy 3rd-round pick.</p>
+                    <h3>Clench Tuxedos & Three Dots an a Dash</h3>
+                    <p><strong>Clench Tuxedos Receives:</strong> C. Brown (RB), Round 18 pick<br>
+                    <strong>Three Dots an a Dash Receives:</strong> D. Douglas (WR), Round 3 pick</p>
+                    <p><span class="grade-badge grade-aplus">Clench Tuxedos: Grade A</span> <span class="grade-badge grade-b">Three Dots an a Dash: Grade B</span></p>
+                    <p>Prior to Week 11 kickoff, the synchronized Bi-Managers at Clench Tuxedos walked right into TDnD's front office and bought starting running back Chase Brown for Demario Douglas and a 3rd-round pick! Even though Brown laid a 3.60-point egg in his debut against his former squad, stacking him alongside Kyren Williams, Kenneth Walker III, and Emmett Johnson gives the 6-5 Bi-Managers an absurdly deep stable for December. Meanwhile, 3-8 TDnD pivots toward 2027 by banking a valuable 3rd-rounder and a young receiver.</p>
                 </section>
 
-                <!-- WEEK 11 PREVIEWS -->
+                <!-- WEEK 12 PREVIEWS -->
                 <section>
-                    <h2>WEEK 11 MATCHUP PREVIEWS</h2>
+                    <h2>WEEK 12 MATCHUP PREVIEWS</h2>
 
                     <div class="prediction-record">
-                        🎯 Gazette Odds Tracking Record: 27 - 15 (Flawless 6-0 in Week 10!)
+                        🎯 Gazette Odds Tracking Record: 31 - 17 (4-2 in Week 11!)
                     </div>
 
-                    <h3>White Bronco (8-2) vs. Josh Almighty (7-3)</h3>
-                    <p><em>Projection: White Bronco 121.19, Josh Almighty 126.57</em><br>
-                    <strong>Gazette Pick: Josh Almighty 🔮</strong><br>
-                    Our Week 11 Marquee Matchup of the Week, brought to you by <em>Uncle Moe's Discount Vasectomies & Bait Shop</em>! First place in the East is on the line as 8-2 White Bronco (battling bye weeks to Drake London and the Packers defense, with newly acquired Bo Nix currently chilling on the bench) takes on a red-hot Josh Almighty squad coming off 181 points. Almighty claims the throne in a thriller.</p>
+                    <h3>White Bronco (9-2) vs. Clench Tuxedos (6-5)</h3>
+                    <p><em>Projection: White Bronco 136.68, Clench Tuxedos 128.99</em><br>
+                    <strong>Gazette Pick: White Bronco 🔮</strong><br>
+                    Our Week 12 Marquee Matchup of the Week, brought to you by <em>Aunt Edna's Discount Root Canal & Bait Barn</em>! The East's two highest-scoring juggernauts collide as 9-2 White Bronco (led by Dak Prescott and Brock Purdy) hosts the 6-5 Bi-Managers, who are banking on a bounce-back game from Chase Brown alongside C.J. Stroud and Amon-Ra St. Brown. Bronco edges out a classic.</p>
 
-                    <h3>Danger Cats (5-5) vs. Steeltown Junkies (4-6)</h3>
-                    <p><em>Projection: Danger Cats 80.56, Steeltown Junkies 71.85</em><br>
+                    <h3>Danger Cats (6-5) vs. Three Dots an a Dash (3-8)</h3>
+                    <p><em>Projection: Danger Cats 137.28, Three Dots an a Dash 125.62</em><br>
                     <strong>Gazette Pick: Danger Cats 🔮</strong><br>
-                    The "Kirk Cousins Custody Bowl"! Both front offices are dodging bye-week landmines like Neo in <em>The Matrix</em>. The Danger Cats are currently projecting a hairball-inducing 80.56 points with four starters on bye and an empty defensive slot—again!—while Steeltown has Drake Maye on bye and Puka Nacua sidelined. Kirk Cousins scratches his former owners just enough to drag the stray felines past Steeltown.</p>
+                    Even with an empty defensive slot STILL staring back at us from the Danger Cats' roster sheet, Deshaun Watson (21.15 proj), Jahmyr Gibbs (19.46 proj), and Kirk Cousins (18.62 proj) give the felines plenty of firepower against a TDnD squad adjusting to life without Chase Brown. Cats survive another self-inflicted wound.</p>
 
-                    <h3>Kyler Duty (2-8) vs. Marr Burrow Smokes (7-3)</h3>
-                    <p><em>Projection: Kyler Duty 61.05, Marr Burrow Smokes 133.99</em><br>
-                    <strong>Gazette Pick: Marr Burrow Smokes 🔮</strong><br>
-                    Kyler Duty is projecting a microscopic 61.05 points with five starters on bye following their mid-week fire sale. Marr Burrow Smokes is projecting 133.99 behind Joe Burrow and Caleb Williams. This one will be over before the 1:00 PM kickoffs finish stretching.</p>
+                    <h3>Josh Almighty (7-4) vs. Steeltown Junkies (4-7)</h3>
+                    <p><em>Projection: Josh Almighty 135.84, Steeltown Junkies 86.74</em><br>
+                    <strong>Gazette Pick: Josh Almighty 🔮</strong><br>
+                    Fresh off getting embarrassed by White Bronco, Josh Allen and Trevor Lawrence take out their frustration on a Steeltown roster projecting just 86.74 points with Drake Maye and Puka Nacua still sidelined. Almighty bounces back in a landslide.</p>
 
-                    <h3>Clench Tuxedos (5-5) vs. Three Dots an a Dash (3-7)</h3>
-                    <p><em>Projection: Clench Tuxedos 117.57, Three Dots an a Dash 91.59</em><br>
-                    <strong>Gazette Pick: Clench Tuxedos 🔮</strong><br>
-                    Can TDnD pull off a miraculous three-game winning streak? Even with Jordan Love and Kyren Williams on bye, the Bi-Managers are rolling out C.J. Stroud, Amon-Ra St. Brown, Nico Collins, and newly acquired Emmett Johnson. The fairy tale pauses here.</p>
-
-                    <h3>RUN CMC (5-5) vs. The Pain Train (4-6)</h3>
-                    <p><em>Projection: RUN CMC 110.42, The Pain Train 103.72</em><br>
-                    <strong>Gazette Pick: RUN CMC 🔮</strong><br>
-                    Massive West division playoff-bubble showdown! The Pain Train trails RUN CMC by just one game for the final playoff spot, but enters Sunday with three starters on bye. Christian McCaffrey and James Cook hold the fort for RUN CMC.</p>
-
-                    <h3>Autobots (2-8) vs. Whopper Wentzday (8-2)</h3>
-                    <p><em>Projection: Autobots 78.00, Whopper Wentzday 125.54</em><br>
+                    <h3>Whopper Wentzday (9-2) vs. The Pain Train (5-6)</h3>
+                    <p><em>Projection: Whopper Wentzday 144.57, The Pain Train 118.46</em><br>
                     <strong>Gazette Pick: Whopper Wentzday 🔮</strong><br>
-                    The Autobots mob is projecting 78.00 points with half their roster on bye, while Whopper Wentzday debuts newly acquired quarterback Aaron Rodgers alongside Jared Goff. The Burger King feasts.</p>
+                    Huge West division clash! The Pain Train just climbed into the #3 seed, but now has to survive a road trip to face the 9-2 Burger King, who finally gets Bijan Robinson (15.22 proj) back off bye to pair with Bucky Irving and Jared Goff. Whopper keeps rolling.</p>
+
+                    <h3>Marr Burrow Smokes (8-3) vs. Autobots (2-9)</h3>
+                    <p><em>Projection: Marr Burrow Smokes 146.65, Autobots 93.29</em><br>
+                    <strong>Gazette Pick: Marr Burrow Smokes 🔮</strong><br>
+                    Joe Burrow (28.90 proj) and Caleb Williams (22.25 proj) have Marr Burrow Smokes projecting a league-high 146.65 points, while the Autobots mob is currently starting tight end Dallas Goedert in their Superflex spot. Chalk up another W for Marr Burrow.</p>
+
+                    <h3>RUN CMC (5-6) vs. Kyler Duty (2-9)</h3>
+                    <p><em>Projection: RUN CMC 119.19, Kyler Duty 101.01</em><br>
+                    <strong>Gazette Pick: RUN CMC 🔮</strong><br>
+                    After getting bumped down to the #4 seed on Points For, RUN CMC gets a prime bounce-back spot to pad their playoff cushion against 2-9 Kyler Duty (who currently has Matthew Stafford's 18.30 projection sitting on the bench behind Rico Dowdle). Christian McCaffrey and James Cook get RUN CMC back to .500.</p>
                 </section>
             </div>
 
@@ -425,30 +453,30 @@
                 <div class="standings-box">
                     <h3>The Steeltown Junkies East</h3>
                     <ul class="standings-list">
-                        <li><span>White Bronco</span> <strong>8-2-0 (1450.90 PF)</strong></li>
-                        <li><span>Josh Almighty</span> <strong>7-3-0 (1474.70 PF)</strong></li>
-                        <li><span>Clench Tuxedos</span> <strong>5-5-0 (1475.10 PF)</strong></li>
-                        <li><span>Danger Cats</span> <strong>5-5-0 (1347.50 PF)</strong></li>
+                        <li><span>White Bronco</span> <strong>9-2-0 (1628.40 PF)</strong></li>
+                        <li><span>Josh Almighty</span> <strong>7-4-0 (1581.75 PF)</strong></li>
+                        <li><span>Clench Tuxedos</span> <strong>6-5-0 (1609.50 PF)</strong></li>
+                        <li><span>Danger Cats</span> <strong>6-5-0 (1440.85 PF)</strong></li>
                     </ul>
                     <div class="cutoff">--- TOILET BOWL BOUND ---</div>
                     <ul class="standings-list">
-                        <li><span>Steeltown Junkies</span> <strong>4-6-0 (1123.70 PF)</strong></li>
-                        <li><span>Three Dots an a Dash</span> <strong>3-7-0 (1149.00 PF)</strong></li>
+                        <li><span>Steeltown Junkies</span> <strong>4-7-0 (1200.20 PF)</strong></li>
+                        <li><span>Three Dots an a Dash</span> <strong>3-8-0 (1262.70 PF)</strong></li>
                     </ul>
                 </div>
 
                 <div class="standings-box">
                     <h3>Whopper Wentzday West</h3>
                     <ul class="standings-list">
-                        <li><span>Whopper Wentzday</span> <strong>8-2-0 (1496.25 PF)</strong></li>
-                        <li><span>Marr Burrow Smokes</span> <strong>7-3-0 (1293.00 PF)</strong></li>
-                        <li><span>RUN CMC</span> <strong>5-5-0 (1232.95 PF)</strong></li>
-                        <li><span>The Pain Train</span> <strong>4-6-0 (1250.45 PF)</strong></li>
+                        <li><span>Whopper Wentzday</span> <strong>9-2-0 (1647.05 PF)</strong></li>
+                        <li><span>Marr Burrow Smokes</span> <strong>8-3-0 (1437.35 PF)</strong></li>
+                        <li><span>The Pain Train</span> <strong>5-6-0 (1399.55 PF)</strong></li>
+                        <li><span>RUN CMC</span> <strong>5-6-0 (1341.55 PF)</strong></li>
                     </ul>
                     <div class="cutoff">--- TOILET BOWL BOUND ---</div>
                     <ul class="standings-list">
-                        <li><span>Autobots</span> <strong>2-8-0 (1089.60 PF)</strong></li>
-                        <li><span>Kyler Duty</span> <strong>2-8-0 (1040.05 PF)</strong></li>
+                        <li><span>Autobots</span> <strong>2-9-0 (1165.45 PF)</strong></li>
+                        <li><span>Kyler Duty</span> <strong>2-9-0 (1152.30 PF)</strong></li>
                     </ul>
                 </div>
             </div>
